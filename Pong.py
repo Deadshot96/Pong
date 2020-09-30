@@ -1,18 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# ## IMPORTING MODULES
-
-# In[1]:
-
-
 import random, os, pygame, math
-
-
-# ## COLORS
-
-# In[2]:
-
 
 WHITE = (240, 240, 240)
 BLACK = (51, 51, 51)
@@ -21,12 +7,6 @@ RED = (240, 20, 20)
 GREEN = (20, 240, 20)
 BLUE = (20, 20, 240)
 YELLOW = (240, 240, 20)
-
-
-# ## PONG CLASS
-
-# In[3]:
-
 
 class Pong:
     
@@ -116,12 +96,6 @@ class Pong:
         return self.xspeed < 0
     
 
-
-# ## PAD CLASS
-
-# In[4]:
-
-
 class Pad:
     
     def __init__(self, width, height, isLeft):
@@ -185,12 +159,6 @@ class Pad:
     def is_left(self):
         return self.isLeft
     
-        
-
-
-# ## GAME CLASS
-
-# In[5]:
 
 
 class Game:
@@ -301,11 +269,6 @@ class Game:
         
         xspeed, yspeed = self.pong.get_xspeed(), self.pong.get_yspeed()
         
-#         if (x + self.radius > self.gameWidth):
-#             self.pong.inv_xspeed()
-        
-#         if (x - self.radius < 0):
-#             self.pong.inv_xspeed()
 
         if (x + self.radius < 0):
             self.pong.reset()
@@ -371,20 +334,8 @@ class Game:
         pygame.quit()
 
         
-        
-        
+if __name__ == '__main__':
 
-
-# In[6]:
-
-
-X = Game()
-X.run()
-
-
-# In[108]:
-
-
-pygame.font.quit()
-pygame.quit()
+    X = Game()
+    X.run()
 
